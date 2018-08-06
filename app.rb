@@ -3,15 +3,15 @@ require "sinatra/reloader" if development?
 #require 'dotenv/load'
 
 enable :sessions
-set :session_secret, "39hr856x1p2", :expire_after => 86400 #24hrs in seconds
+set :session_secret, "39hr856x1p2", :expire_after => 1#86400 #24hrs in seconds
 
-before do
-  puts '[Params]'
-  p params
-end
+# before do
+#   puts '[Params]'
+#   p params
+# end
 
 get "/" do
-  erb :index, :layout => :layout_index
+  erb :index
 end
 
 get "/mortgage_calc" do
