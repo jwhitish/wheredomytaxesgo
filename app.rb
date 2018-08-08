@@ -14,6 +14,18 @@ get "/" do
   erb :index
 end
 
+get "/about" do
+  erb :about
+end
+
+get "/tos" do
+  erb :tos
+end
+
+get "/privacy" do
+  erb :privacy
+end
+
 get "/mortgage_calc" do
   if params['button'] == 'Submit'
     dnpmt = params['dnpmt'].to_i
