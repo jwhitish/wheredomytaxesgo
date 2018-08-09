@@ -79,10 +79,10 @@ nav a:hover {
   border-radius: 100px;
   font-size: 18px;
   font-style: strong;
-  background-color: gray;
+  background-color: #0b98de;
   color: white;
 }
 
 .button:hover {
-  background-color: lightgray;
+  background-color: #17b0cf;
 }

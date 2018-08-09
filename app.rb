@@ -3,7 +3,7 @@ require "sinatra/reloader" if development?
 #require 'dotenv/load'
 
 enable :sessions
-set :session_secret, "39hr856x1p2", :expire_after => 1#86400 #24hrs in seconds
+set :session_secret, "39hr85t6x1p2ksp49x023y", :expire_after => 86400 #24hrs in seconds
 
 # before do
 #   puts '[Params]'
@@ -37,14 +37,4 @@ get "/mortgage_calc" do
     $payment = ""
   end
   erb :mortgage_calc, :locals => {:payment => $payment}
-end
-
-post "/hangman" do
-  if params["button"] == "New Game"
-    session.clear
-  else
-    session[:guess] = params[:text]
-    session[:message] = session[:guess]
-  end
-  redirect "/hangman"
 end
