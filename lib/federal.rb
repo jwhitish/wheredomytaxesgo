@@ -93,4 +93,42 @@ def total_tax_obligation_joint(gross_income)
   @total_tax = @flat_tax + (@taxable_income * @tax_rate)
 end
 
-#total_tax_obligation_joint(100000)
+def breakdown(total_tax)
+  @socsac = total_tax * 0.2428
+  @medicare = total_tax * 0.1451
+  @medicaid = total_tax * 0.0956
+  @h_ex_sub = total_tax * 0.0104
+  @mand_prog = total_tax * 0.1316
+  @inf_init = total_tax * 0.0104
+  @net_int = total_tax * 0.0842
+  @d_agr = total_tax * 0.0044
+  @d_com = total_tax * 0.0022
+  @d_def = total_tax * 0.1386
+  @d_edu = total_tax * 0.0139
+  @d_ene = total_tax * 0.0067
+  @d_hhs = total_tax * 0.0161
+  @d_hs = total_tax * 0.0106
+  @d_hu = total_tax * 0.0091
+  @d_int = total_tax * 0.0026
+  @d_jus = total_tax * 0.0065
+  @d_lab = total_tax * 0.0021
+  @st_dep = total_tax * 0.0065
+  @d_tra = total_tax * 0.0036
+  @d_tre = total_tax * 0.0028
+  @d_va = total_tax * 0.0192
+  @corp_eng = total_tax * 0.0011
+  @epa = total_tax * 0.0012
+  @gsa = total_tax * 0.0001
+  @nasa = total_tax * 0.0045
+  @nsf = total_tax * 0.0012
+  @sba = total_tax * 0.0001
+  @ssa = total_tax * 0.0020
+  @other_agencies = total_tax * 0.0041
+  @overseas = total_tax * 0.0234
+  @em_fund = total_tax * 0.0000
+  @prog_integ = total_tax * 0.0005
+  @dis_relief = total_tax * 0.0015
+  @wildfire = total_tax * 0.0003
+end
+
+breakdown(10000)
