@@ -78,6 +78,7 @@ table, th, td {
     text-align: center;
     margin: auto;
     border-collapse: collapse;
+    font-family: Lato;
 }
 
 tr:nth-child(even) {
@@ -86,6 +87,10 @@ tr:nth-child(even) {
 
 table {
   border-spacing: 0px;
+}
+
+.item {
+  text-align: left;
 }
 
 .main {
