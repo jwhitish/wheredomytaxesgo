@@ -40,6 +40,10 @@ get "/about" do
   erb :about
 end
 
+get "/resources" do
+  erb :resources
+end
+
 get "/tos" do
   erb :tos
 end

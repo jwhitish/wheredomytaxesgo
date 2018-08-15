@@ -7,15 +7,17 @@
   <body>
     <nav>
       <span><a id="logo" href="/">WDMTG?</a></span>
-      <span style="float: right; margin-right: 10%;"><a href="/">HOME</a>
+      <span style="float: right; margin-right: 10%;"><a href="/">HOME</a> <a href="/resources">RESOURCES</a> 
       <a href="/about">ABOUT</a></span>
     </nav>
-    <div class="main" style="padding-top: 50px;">
+    <div class="main" style="padding-top: 50px; min-height: 100%;">
       <%= yield %>
     </div>
   </body>
   <footer>
+    <div>
     <p style="margin-bottom: 0px;">Copyright &copy; 2018 Where Do My Taxes Go? -  Virtual Summit Media, LLC</p>
     <p style="margin-top: 2px; margin-bottom: 2px;"><a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy Policy</a></p>
+    </div>
   </footer>
 </html>

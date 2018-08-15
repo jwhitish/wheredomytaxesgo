@@ -94,7 +94,7 @@ def total_tax_obligation_joint(gross_income)
 end
 
 def breakdown(total_tax)
-  @socsac = total_tax * 0.2428
+  @socsec = total_tax * 0.2428
   @medicare = total_tax * 0.1451
   @medicaid = total_tax * 0.0956
   @h_ex_sub = total_tax * 0.0104
@@ -130,5 +130,3 @@ def breakdown(total_tax)
   @dis_relief = total_tax * 0.0015
   @wildfire = total_tax * 0.0003
 end
-
-breakdown(10000)
