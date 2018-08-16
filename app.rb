@@ -26,14 +26,15 @@ get "/results" do
     if session[:filing_status] == "single"
       fed_tax_bracket_single(session[:income].to_i)
       total_tax_obligation_single(session[:income].to_i)
+      breakdown(@total_tax)
     else #if joint filing
       fed_tax_bracket_joint(session[:income].to_i)
       total_tax_obligation_joint(session[:income].to_i)
+      breakdown(@total_tax)
     end
-    #add breakdown
   end
 
-  erb :results, :locals => {:total_tax => @total_tax}
+  erb :results, :locals => {:total_tax => @total_tax, :socsec => @socsec}
 end
 
 get "/about" do
