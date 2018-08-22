@@ -2,11 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     dotenv (2.5.0)
-    httparty (0.16.2)
-      multi_xml (>= 0.5.2)
-    json (2.1.0)
-    multi_xml (0.6.0)
     mustermann (1.0.2)
+    pg (1.0.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
@@ -22,8 +19,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
-  httparty
-  json
+  pg
   sinatra
 
 BUNDLED WITH
