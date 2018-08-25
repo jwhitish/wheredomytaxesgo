@@ -1,5 +1,5 @@
 require "sinatra"
-#require "sinatra/reloader" if development?
+require "sinatra/reloader" if development?
 require "sinatra/activerecord"
 require_relative "models/model"
 require_relative "lib/federal.rb"
