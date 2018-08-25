@@ -1,9 +1,8 @@
 require "sinatra"
-require "sinatra/reloader" if development?
+#require "sinatra/reloader" if development?
 require "sinatra/activerecord"
-require_relative "models/model"
 require_relative "lib/federal.rb"
-require_relative "config/environments"
+
 
 enable :sessions
 set :session_secret, "39hr85t6x1p2ksp49x023y", :expire_after => 86400 #24hrs in seconds
