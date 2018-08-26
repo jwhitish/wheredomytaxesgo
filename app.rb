@@ -9,6 +9,8 @@ set :session_secret, "39hr85t6x1p2ksp49x023y", :expire_after => 86400 #24hrs in 
 set :publishable_key, ENV['PUBLISHABLE_KEY']
 set :secret_key, ENV['SECRET_KEY']
 
+Stripe.api_key = settings.secret_key
+
 before do
   puts '[Params]'
   p params
@@ -61,8 +63,8 @@ get "/donate" do
   erb :donate
 end
 
-get "/success" do
-  erb :success
+get "/charge" do
+  erb :charge
 end
 
 post "/" do
@@ -77,7 +79,25 @@ post "/results" do
   redirect "/"
 end
 
-post "/donate" do
-  #stuff here
-  redirect "/success"
+post "/charge" do
+  # Amount in cents
+  @amount = 500
+
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+
+  erb :charge
+end
+
+error Stripe::CardError do
+  env['sinatra.error'].message
 end
