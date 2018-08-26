@@ -1,11 +1,13 @@
 require "sinatra"
-#require "sinatra/reloader" if development?
 require "sinatra/activerecord"
+require "stripe"
+require "dotenv/load"
 require_relative "lib/federal.rb"
-
 
 enable :sessions
 set :session_secret, "39hr85t6x1p2ksp49x023y", :expire_after => 86400 #24hrs in seconds
+set :publishable_key, ENV['PUBLISHABLE_KEY']
+set :secret_key, ENV['SECRET_KEY']
 
 before do
   puts '[Params]'
@@ -55,6 +57,14 @@ get "/privacy" do
   erb :privacy
 end
 
+get "/donate" do
+  erb :donate
+end
+
+get "/success" do
+  erb :success
+end
+
 post "/" do
   session[:income] = params[:income]
   session[:state] = params[:state]
@@ -65,4 +75,9 @@ end
 post "/results" do
   session.clear
   redirect "/"
+end
+
+post "/donate" do
+  #stuff here
+  redirect "/success"
 end

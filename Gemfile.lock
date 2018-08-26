@@ -15,9 +15,12 @@ GEM
     arel (9.0.0)
     concurrent-ruby (1.0.5)
     dotenv (2.5.0)
+    faraday (0.15.2)
+      multipart-post (>= 1.2, < 3)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
+    multipart-post (2.0.0)
     mustermann (1.0.2)
     pg (1.0.0)
     rack (2.0.5)
@@ -32,6 +35,8 @@ GEM
     sinatra-activerecord (2.0.13)
       activerecord (>= 3.2)
       sinatra (>= 1.0)
+    stripe (3.23.0)
+      faraday (~> 0.10)
     thread_safe (0.3.6)
     tilt (2.0.8)
     tzinfo (1.2.5)
@@ -47,6 +52,7 @@ DEPENDENCIES
   rake
   sinatra
   sinatra-activerecord
+  stripe
 
 BUNDLED WITH
    1.16.2
