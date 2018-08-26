@@ -83,7 +83,7 @@ table, th, td {
     text-align: center;
     margin: auto;
     border-collapse: collapse;
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 tr:nth-child(even) {
@@ -92,6 +92,12 @@ tr:nth-child(even) {
 
 table {
   border-spacing: 0px;
+}
+
+.donate {
+  border: 0 !important;
+  background-color: #ffffff !important;
+  padding-bottom: 20px;
 }
 
 .item {

@@ -59,8 +59,8 @@ get "/privacy" do
   erb :privacy
 end
 
-get "/donate" do
-  erb :donate
+get "/support" do
+  erb :support
 end
 
 get "/charge" do
@@ -79,22 +79,67 @@ post "/results" do
   redirect "/"
 end
 
-post "/charge" do
+post "/charge1" do
   # Amount in cents
-  @amount = 500
-
+  @amount = 100
   customer = Stripe::Customer.create(
     :email => 'customer@example.com',
     :source  => params[:stripeToken]
   )
-
   charge = Stripe::Charge.create(
     :amount      => @amount,
     :description => 'Sinatra Charge',
     :currency    => 'usd',
     :customer    => customer.id
   )
+  erb :charge
+end
 
+post "/charge5" do
+  # Amount in cents
+  @amount = 500
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+  erb :charge
+end
+
+post "/charge10" do
+  # Amount in cents
+  @amount = 1000
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+  erb :charge
+end
+
+post "/charge15" do
+  # Amount in cents
+  @amount = 1500
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
   erb :charge
 end
 
