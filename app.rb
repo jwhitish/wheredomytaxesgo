@@ -4,6 +4,7 @@ require "stripe"
 require "dotenv/load"
 require_relative "lib/federal.rb"
 
+
 enable :sessions
 set :session_secret, "39hr85t6x1p2ksp49x023y", :expire_after => 86400 #24hrs in seconds
 set :publishable_key, ENV['PUBLISHABLE_KEY']
@@ -71,6 +72,8 @@ post "/" do
   session[:income] = params[:income]
   session[:state] = params[:state]
   session[:filing_status] = params[:filing_status]
+  #save to db
+  #form = Forms.create(income: params[:income], state: params[:state], filing_status: params[:filing_status])
   redirect "/results"
 end
 
