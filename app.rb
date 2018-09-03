@@ -146,6 +146,70 @@ post "/charge15" do
   erb :charge
 end
 
+post "/charge20" do
+  # Amount in cents
+  @amount = 2000
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+  erb :charge
+end
+
+post "/charge30" do
+  # Amount in cents
+  @amount = 3000
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+  erb :charge
+end
+
+post "/charge40" do
+  # Amount in cents
+  @amount = 4000
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+  erb :charge
+end
+
+post "/charge50" do
+  # Amount in cents
+  @amount = 5000
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+  erb :charge
+end
+
 error Stripe::CardError do
   env['sinatra.error'].message
 end
