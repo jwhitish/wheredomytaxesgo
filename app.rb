@@ -18,6 +18,14 @@ before do #Stub out before prod!
   p params
 end
 
+############ Begin Db Classes ############
+
+class Submission < ActiveRecord::Base
+  validates :name, presence: true, uniqueness: true
+end
+
+############ Begin Routes ############
+
 get "/" do
   if session[:id] == nil
     session[:id] = rand(100000)
