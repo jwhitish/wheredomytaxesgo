@@ -4,6 +4,7 @@ require "stripe"
 require "dotenv/load"
 require_relative "lib/federal.rb"
 
+set :database_file, 'config/database.yml'
 
 enable :sessions
 set :session_secret, "39hr85t6x1p2ksp49x023y", :expire_after => 86400 #24hrs in seconds
