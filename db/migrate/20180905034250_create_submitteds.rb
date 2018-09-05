@@ -1,6 +1,6 @@
-class CreateSubmitted < ActiveRecord::Migration[5.2]
+class CreateSubmitteds < ActiveRecord::Migration[5.2]
   def up
-    create_table :submissions do |t|
+    create_table :submitteds do |t|
       t.string :income
       t.string :state
       t.string :filing_status
@@ -8,6 +8,6 @@ class CreateSubmitted < ActiveRecord::Migration[5.2]
   end
 
   def down
-    drop_table :submissions
+    drop_table :submitteds
   end
 end

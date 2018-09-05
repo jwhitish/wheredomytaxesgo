@@ -20,7 +20,7 @@ end
 
 ############ Begin Db Classes ############
 
-class Submitted < ActiveRecord::Base
+class Submitteds < ActiveRecord::Base
 end
 
 ############ Begin Routes ############
@@ -81,7 +81,7 @@ post "/" do
   session[:state] = params[:state]
   session[:filing_status] = params[:filing_status]
   #save to db
-  Submitted.create(:income => params[:income], :state => params[:state], :filing_status => params[:filing_status])
+  Submitteds.create(:income => params[:income], :state => params[:state], :filing_status => params[:filing_status])
   #redirect to results page
   redirect "/results"
 end
