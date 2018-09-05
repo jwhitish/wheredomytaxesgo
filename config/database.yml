@@ -7,10 +7,6 @@ development:
   <<: *default
   database: db/database.db
 
-# test:
-#   <<: *default
-#   database: db/test.sqlite3
-
 production:
   adapter: postgresql
   encoding: unicode
