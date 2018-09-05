@@ -95,12 +95,12 @@ post "/charge1" do
   # Amount in cents
   @amount = 100
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
@@ -111,12 +111,12 @@ post "/charge5" do
   # Amount in cents
   @amount = 500
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
@@ -127,12 +127,12 @@ post "/charge10" do
   # Amount in cents
   @amount = 1000
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
@@ -143,12 +143,12 @@ post "/charge15" do
   # Amount in cents
   @amount = 1500
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
@@ -159,12 +159,12 @@ post "/charge20" do
   # Amount in cents
   @amount = 2000
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
@@ -175,12 +175,12 @@ post "/charge30" do
   # Amount in cents
   @amount = 3000
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
@@ -191,12 +191,12 @@ post "/charge40" do
   # Amount in cents
   @amount = 4000
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
@@ -207,12 +207,12 @@ post "/charge50" do
   # Amount in cents
   @amount = 5000
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => 'Support for WDMTG',
     :currency    => 'usd',
     :customer    => customer.id
   )
