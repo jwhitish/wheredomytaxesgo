@@ -4,6 +4,7 @@ require "stripe"
 require "dotenv/load"
 require_relative "lib/federal.rb"
 
+set :database_file, 'config/database.yml'
 
 enable :sessions
 set :session_secret, "39hr85t6x1p2ksp49x023y", :expire_after => 86400 #24hrs in seconds
@@ -16,6 +17,13 @@ before do #Stub out before prod!
   puts '[Params]'
   p params
 end
+
+############ Begin Db Classes ############
+
+class Submitteds < ActiveRecord::Base
+end
+
+############ Begin Routes ############
 
 get "/" do
   if session[:id] == nil
@@ -73,7 +81,8 @@ post "/" do
   session[:state] = params[:state]
   session[:filing_status] = params[:filing_status]
   #save to db
-  #form = Forms.create(income: params[:income], state: params[:state], filing_status: params[:filing_status])
+  Submitteds.create(:income => params[:income], :state => params[:state], :filing_status => params[:filing_status])
+  #redirect to results page
   redirect "/results"
 end
 

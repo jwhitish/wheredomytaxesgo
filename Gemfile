@@ -2,11 +2,14 @@ source "https://rubygems.org"
 
 gem "sinatra"
 gem "dotenv"
-gem "pg"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "rake"
 gem "stripe"
+
+group :production do
+  gem "pg"
+end
 
 group :development do
   gem "tux"
