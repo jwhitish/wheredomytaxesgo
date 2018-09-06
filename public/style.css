@@ -125,3 +125,14 @@ table {
 .button:hover {
   background-color: #17b0cf;
 }
+
+#mc_embed_signup {
+  background:#fff;
+  clear:left;
+  font:14px 'Lato',Arial,sans-serif;
+  display:block;
+  width: 65% !important;
+  padding-left: 17%;
+  padding-top: 3%;
+  text-align: center;
+}
