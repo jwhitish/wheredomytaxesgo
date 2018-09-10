@@ -1,0 +1,19 @@
+<h1>Explore Recent Submissions</h1>
+<p>
+  <table>
+    <tr>
+      <th style="width: 50px;">ID</th>
+      <th style="width: 100px;">Income</th>
+      <th style="width: 100px;">Location</th>
+      <th style="width: 100px;">Filing Status</th>
+    </tr>
+    <% @submits.each do |item| %>
+      <tr>
+        <td> <%= p item.id %> </td>
+        <td> <%= p item.income %> </td>
+        <td> <%= p item.state %> </td>
+        <td> <%= p item.filing_status %> </td>
+      </tr>
+    <% end %>
+  </table>
+</p>

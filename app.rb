@@ -52,6 +52,16 @@ get "/results" do
   erb :results, :locals => {:total_tax => @total_tax, :socsec => @socsec}
 end
 
+get "/explore" do
+  if params['key'] == "explore"
+    @submits = Submitteds.all
+  else
+    redirect '/'
+  end
+
+  erb :explore, :locals => {:submits => @submits}
+end
+
 get "/about" do
   erb :about
 end
