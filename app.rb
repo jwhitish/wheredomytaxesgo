@@ -13,10 +13,10 @@ set :secret_key, ENV['SECRET_KEY']
 
 Stripe.api_key = settings.secret_key
 
-before do #Stub out before prod!
-  puts '[Params]'
-  p params
-end
+# before do #Stub out before prod!
+#   puts '[Params]'
+#   p params
+# end
 
 ############ Begin Db Classes ############
 
