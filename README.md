@@ -13,7 +13,8 @@ A long barroom debate one evening about how much of our money was going to speci
 Eventually our curiosity to find out (and a few more happy hours of heated debate) turned into this project. An open, non-partisan, and unbiased window into the budgetary process of the government and an answer to the question: "Just where *does* my money go?"
 
 ## Framework Used
-**Built with -**
+Built with:
+
 [Ruby](https://www.ruby-lang.org/en/) using the [Sinatra](http://sinatrarb.com/) DSL.
 
 ## Features
@@ -23,17 +24,17 @@ We think we can still do more.
 
 Planned roadmap:
  - [x] Basic Federal breakdowns
- - [] Add state-level budget data
- - [] Add Congressional compensation data
- - [] Compare breakdowns in enacted budgets vs proposed budgets
- - [] Increase the accuracy of tax obligation calculations
- - [] Refactor codebase & update CSS
- - [] Create a logo & favicon
- - [] Add a public page to show total donations collected to operate the site
- - [] Add a custom amount option to donate page
- - [] Make site fully-mobile
- - [] Add voting tool to let users vote for future functions to be added
- - [] Add additional countries (UK and CAN)
+ - [ ] Add state-level budget data
+ - [ ] Add Congressional compensation data
+ - [ ] Compare breakdowns in enacted budgets vs proposed budgets
+ - [ ] Increase the accuracy of tax obligation calculations
+ - [ ] Refactor codebase & update CSS
+ - [ ] Create a logo & favicon
+ - [ ] Add a public page to show total donations collected to operate the site
+ - [ ] Add a custom amount option to donate page
+ - [ ] Make site fully-mobile
+ - [ ] Add voting tool to let users vote for future functions to be added
+ - [ ] Add additional countries (UK and CAN)
 
 ## Contribute
 Thanks for having an interest in contributing!
@@ -51,9 +52,10 @@ Pull Requests are always welcome.
 Please contact before starting development on new features.
 
 Ensure the PR description clearly describes the problem and solution. It should include:
--The operating system/ruby version on which you tested.
--The relevant issue number, if applicable.
--A complete description of feature built, if applicable.
+
+- The operating system/ruby version on which you tested.
+- The relevant issue number, if applicable.
+- A complete description of feature built, if applicable.
 
 ## Credits
 This project was born out of a bar debate over how much of our incomes go to particular government departments, so I have to give thanks to MZ and VS for their tenacity and witty banter otherwise this project may never have been.
