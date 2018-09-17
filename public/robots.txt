@@ -1,0 +1,4 @@
+Sitemap: https://www.wheredomytaxesgo.co/sitemap.xml
+
+User-agent: *
+Disallow:
