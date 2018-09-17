@@ -14,12 +14,31 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+    <!-- Cookie Consent BEGIN -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#0b98de"
+        },
+        "button": {
+          "background": "transparent",
+          "text": "#fff",
+          "border": "#fff"
+        }
+      }
+    })});
+    </script>
+    <!-- Cookie Consent END -->
   </head>
   <body>
     <nav>
       <span><a id="logo" href="/">WDMTG?</a></span>
       <span style="float: right; margin-right: 10%;"><a href="/">HOME</a> <a href="/resources">RESOURCES</a>
-      <a href="/about">ABOUT</a> <a href="/support">SUPPORT</a></span>
+      <a href="/about">ABOUT</a> <a href="/support">SUPPORT US</a></span>
     </nav>
     <div class="main" style="padding-top: 50px; min-height: 100%;">
       <%= yield %>
