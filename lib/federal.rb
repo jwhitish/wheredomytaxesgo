@@ -1,3 +1,4 @@
+#takes gross income and turns it into individual line items from the federal budget
 
 def fed_tax_bracket_single(gross_income)
   if gross_income <= 9525
