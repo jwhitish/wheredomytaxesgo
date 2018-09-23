@@ -3,6 +3,7 @@ require "sinatra/activerecord"
 require "stripe"
 require "dotenv/load"
 require_relative "lib/federal.rb"
+require_relative "lib/state.rb"
 
 set :database_file, 'config/database.yml'
 
@@ -47,9 +48,10 @@ get "/results" do
       total_tax_obligation_joint(session[:income].to_i)
       breakdown(@total_tax)
     end
+    state_max_tax(session[:income].to_i, session[:state])
   end
 
-  erb :results, :locals => {:total_tax => @total_tax, :socsec => @socsec}
+  erb :results, :locals => {:total_tax => @total_tax, :socsec => @socsec, :state => @state}
 end
 
 get "/explore" do
