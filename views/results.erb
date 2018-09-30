@@ -2,6 +2,7 @@
 </br>
 <div id="results">
   <p>Based on the information you entered, your annual tax obligation before deductions is around: $<%=  '%.2f' % @total_tax %></br>And the state of <%= session[:state] %> may collect up to an additional: $<%= '%.2f' % @state.to_i %></p>
+  </br>
   <p>According to our calculations, this would break down in the <a href="https://www.whitehouse.gov/wp-content/uploads/2018/02/budget-fy2019.pdf" target="_blank">proposed 2019 federal budget</a> as follows:</p>
 </br>
   <table>
