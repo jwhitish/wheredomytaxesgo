@@ -81,7 +81,7 @@ get "/privacy" do
 end
 
 get "/support" do
-  erb :support
+  erb :support, :layout => :layout_sidebar
 end
 
 get "/charge" do
