@@ -206,7 +206,7 @@ table {
   grid-column-end: span 3;
   grid-row-start: 2;
   grid-row-end: 2;
-  padding: 5%;
+  padding: 0% 5% 2% 0%;
 }
 
 .c {
