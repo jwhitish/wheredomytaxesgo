@@ -65,11 +65,11 @@ get "/explore" do
 end
 
 get "/about" do
-  erb :about
+  erb :about, :layout => :layout_sidebar
 end
 
 get "/resources" do
-  erb :resources
+  erb :resources, :layout => :layout_sidebar
 end
 
 get "/tos" do

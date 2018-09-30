@@ -32,18 +32,17 @@ input {
 
 body {
   height: 100%;
-  width: 100%;
-  display: inline-block;
+  display: block;
 }
 
 footer {
-  display: inline-block;
+  display: block;
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   font-color: lightgray;
   position: relative;
-  bottom: 1% !important;
+  bottom: 1%;
   width: 100%;
   height: 50px;   /* Height of the footer */
 }
@@ -104,7 +103,7 @@ table {
 
 .main {
   min-height: 100%;
-  width: 100%;
+  width: 75%;
   padding: 5% 5% 5% 5%;
   text-align: center;
   float: left;
@@ -169,4 +168,62 @@ table {
    padding-top: 3px;
    margin-right: 10px;
    margin-top: 0px;
+}
+
+
+
+
+
+
+
+
+/* Testing */
+.grid {
+  border: 0px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5% 35% 35% 5% 20%;
+  grid-template-rows: 7% auto 55px;
+  grid-row-gap: 0%;
+  grid-column-gap: 0%;
+}
+
+.box {
+  background-color: white;
+  border-radius: 0px;
+  border: 0px;
+}
+
+.a {
+  grid-column-start: 1;
+  grid-column-end: span 5;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.b {
+  grid-column-start: 2;
+  grid-column-end: span 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  padding: 2% 5% 2% 0%;
+}
+
+.c {
+  grid-column-start: 5;
+  grid-column-end: span 5;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  border-left: 1px solid lightgray;
+  padding: 10%;
+}
+
+.d {
+  grid-column-start: 1;
+  grid-column-end: span 5;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  border-top: 1px solid lightgray;
+  padding: 10px;
 }
