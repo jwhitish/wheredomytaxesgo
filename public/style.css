@@ -31,7 +31,7 @@ input {
 }
 
 body {
-
+  height: 100%;
 }
 
 footer {
@@ -40,10 +40,10 @@ footer {
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   font-color: lightgray;
-  position:relative;
-  bottom:1%;
-  width:100%;
-  height:3%;   /* Height of the footer */
+  position: relative;
+  bottom: 1%;
+  width: 100%;
+  height: 50px;   /* Height of the footer */
 }
 
 nav {
@@ -178,12 +178,12 @@ table {
 
 /* Testing */
 .grid {
-  border: 2px lightgray solid;
+  border: 0px;
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 5% 35% 35% 5% 20%;
-  grid-template-rows: 7% auto 10%;
+  grid-template-rows: 7% auto 55px;
   grid-row-gap: 0%;
   grid-column-gap: 0%;
 }
@@ -191,7 +191,7 @@ table {
 .box {
   background-color: white;
   border-radius: 0px;
-  border: 2px lightgray solid;
+  border: 0px;
 }
 
 .a {
@@ -206,6 +206,7 @@ table {
   grid-column-end: span 3;
   grid-row-start: 2;
   grid-row-end: 2;
+  padding: 5%;
 }
 
 .c {
@@ -213,6 +214,8 @@ table {
   grid-column-end: span 5;
   grid-row-start: 2;
   grid-row-end: 2;
+  border-left: 1px solid lightgray;
+  padding: 10%;
 }
 
 .d {
@@ -220,4 +223,6 @@ table {
   grid-column-end: span 5;
   grid-row-start: 3;
   grid-row-end: 3;
+  border-top: 1px solid lightgray;
+  padding: 10px;
 }
