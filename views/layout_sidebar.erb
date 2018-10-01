@@ -77,8 +77,25 @@
       <div class="box b">
         <%= yield %>
       </div>
-      <div class="box c">
-        <p>Test</p>
+      <div class="box c"> <!-- sidebar -->
+        <div style="text-align: center; padding-bottom: 10px;">
+          <form method="get" action="http://www.google.com/search" style="border: 0 white;">
+          <div style="padding: 4px;">
+          <input type="text" name="q" size="30%" style="color:#808080;"
+          maxlength="255" value="Google site search"
+          onfocus="if(this.value==this.defaultValue)this.value=''; this.style.color='black';" onblur="if(this.value=='')this.value=this.defaultValue; "/>
+          <input type="submit" value="Go!" class="button" style="padding: 4px; margin: 8px;"/>
+          <input type="hidden" name="sitesearch" value="wheredomytaxesgo.co/" />
+          </div>
+          </form>
+        </div>
+        <div style="text-align: center; padding-bottom: 10px;">
+          <p>mailchimp</p>
+        </div>
+        <div style="text-align: center; padding-bottom: 10px;">
+          <p>this site is powered by ads</p>
+          <p>ad unit alt donate</p>
+        </div>
       </div>
     </body>
     <div class="box d">
