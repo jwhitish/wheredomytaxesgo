@@ -79,7 +79,7 @@
         <%= yield %>
       </div>
       <div class="box c"> <!-- sidebar -->
-        <div style="text-align: center; background-color: #0b98de; border-radius: 4px;">
+        <div style="text-align: center; background-color: #0b98de; border-radius: 4px; padding-top: 4px; padding-bottom: 4px;">
           <p style="color: white;">Get the Latest Budget Updates Right to Your Inbox</p>
         </div>
           <div style="text-align: center; padding-bottom: 10px;">
@@ -103,10 +103,36 @@
           </div>
         </br>
           <div style="text-align: center; padding-bottom: 10px;">
-            <p>this site is powered by ads</p>
-            <p>ad unit alt donate</p>
+            <!-- Google Adsense -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Sidebar-wdmtg -->
+            <ins class="adsbygoogle"
+            style="display:inline-block;width:120px;height:600px"
+            data-ad-client="ca-pub-3057711027195385"
+            data-ad-slot="6516468084"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- End Google Adsense -->
           </div>
       </div>
+      <script>
+        // Run after all the page elements have loaded
+        window.onload = function(){
+        // This will take care of asynchronous Google ads
+          setTimeout(function() {
+            // We are targeting the first banner ad of AdSense
+            var ad = document.querySelector("ins.adsbygoogle");
+            // If the ad contains no innerHTML, ad blockers are at work
+            if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+              // Since ad blocks hide ads using CSS too
+              ad.style.cssText = 'display:block !important';
+              // You can put any text, image or even IFRAME tags here
+              ad.innerHTML = '<p>This site is supported by ads and by generous donors like you. Please consider <a href="/support">supporting</a> this site in lieu of turning off your ad blocker. Thank you!</p>';
+            }
+          }, 2000); // The ad blocker check is performed 2 seconds after the page load
+        };
+      </script>
     </body>
     <div class="box d">
       <footer>
