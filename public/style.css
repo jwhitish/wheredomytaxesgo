@@ -186,7 +186,7 @@ hr {
       overflow: visible;
       height: auto;
     }
-    nav span {
-      float: auto;
+    #logo {
+      padding-left: 45%;
     }
 }
