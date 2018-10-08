@@ -54,7 +54,10 @@
   padding: 10px;
 }
 
-@media only screen and (max-width: 1026px) {
+@media only screen and (max-width: 600px) {
+    .grid {
+      grid-template-rows: 15% auto 55px;
+    }
     .c {
         display: none;
     }
