@@ -35,21 +35,16 @@ get "/" do
 end
 
 get "/results" do
-  # if session[:id] == nil
-  #   redirect "/"
-  # else #if not nil
-  #   #run methods
-    if session[:filing_status] == "single"
-      fed_tax_bracket_single(session[:income].to_i)
-      total_tax_obligation_single(session[:income].to_i)
-      breakdown(@total_tax)
-    else #if joint filing
-      fed_tax_bracket_joint(session[:income].to_i)
-      total_tax_obligation_joint(session[:income].to_i)
-      breakdown(@total_tax)
-    end
-    state_max_tax(session[:income].to_i, session[:state])
-  #end
+  if session[:filing_status] == "single"
+    fed_tax_bracket_single(session[:income].to_i)
+    total_tax_obligation_single(session[:income].to_i)
+    breakdown(@total_tax)
+  else #if joint filing
+    fed_tax_bracket_joint(session[:income].to_i)
+    total_tax_obligation_joint(session[:income].to_i)
+    breakdown(@total_tax)
+  end
+  state_max_tax(session[:income].to_i, session[:state])
 
   erb :results, :locals => {:total_tax => @total_tax, :socsec => @socsec, :state => @state}
 end
