@@ -193,4 +193,7 @@ hr {
       width: 100%;
       padding: 0px 0px 10px 0px;
     }
+    .button {
+      width: 120px;
+    }
 }
