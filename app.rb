@@ -59,6 +59,10 @@ get "/explore" do
   erb :explore, :locals => {:submits => @submits}
 end
 
+get "/vote" do
+  erb :vote
+end
+
 get "/about" do
   erb :about, :layout => :layout_sidebar
 end
