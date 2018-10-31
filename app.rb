@@ -28,7 +28,7 @@ end
 
 get "/" do
   if session[:id] == nil
-    session[:id] = rand(100000)
+    session[:id] = rand(1000000)
   end
 
   erb :index
