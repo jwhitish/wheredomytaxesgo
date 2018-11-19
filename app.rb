@@ -89,6 +89,10 @@ get "/charge" do
   erb :charge
 end
 
+get "/error" do
+  erb :error
+end
+
 post "/" do
   session[:income] = params[:income].gsub(/[\s,]/ ,"").to_i.round
   session[:state] = params[:state]
