@@ -93,6 +93,11 @@ get "/error" do
   erb :error
 end
 
+not_found do
+  status 404
+  erb :error
+end
+
 post "/" do
   session[:income] = params[:income].gsub(/[\s,]/ ,"").to_i.round
   session[:state] = params[:state]
