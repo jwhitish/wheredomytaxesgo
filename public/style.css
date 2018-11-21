@@ -9,6 +9,11 @@ h1 {
   font-size: 32px;
 }
 
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
 h4 {
   font-family: 'Lato', sans-serif;
 }
@@ -97,8 +102,8 @@ hr {
   margin-bottom: 8px;
 }
 
-/* Classes */
 
+/* Classes */
 /* Tooltip container */
 .tooltip {
     position: relative;
@@ -166,8 +171,38 @@ hr {
   background-color: #17b0cf;
 }
 
-/* IDs */
+/*Press Page Card*/
+.card {
+  display: inline-grid;
+    margin: 15px;
+    width: 175px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
 
+.card a:link {
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card_container {
+    padding: 2px 16px;
+}
+
+/*End Classes*/
+
+
+/* IDs */
 #res_abt {
   display:block;
   text-align: left;
@@ -203,7 +238,10 @@ hr {
    margin-right: 10px;
    margin-top: 0px;
 }
+/*End IDs*/
 
+
+/*Mobile*/
 @media only screen and (max-width: 600px) {
     .main {
         margin-top: 20%;
@@ -223,6 +261,7 @@ hr {
       width: 120px;
     }
 }
+/*End mobile*/
 
 
 /* Custom 404 page */
@@ -326,3 +365,4 @@ hr {
     font-size: 14px;
   }
 }
+/* End 404 */

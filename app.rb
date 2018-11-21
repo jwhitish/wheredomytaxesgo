@@ -93,6 +93,10 @@ get "/error" do
   erb :error
 end
 
+get "/press" do
+  erb :press
+end
+
 not_found do
   status 404
   erb :error
