@@ -1,7 +1,11 @@
+<script src="functions.js"></script>
+
 <h1>Explore Recent Submissions</h1>
 </br>
 </br>
-<p>
+<p>There have been <%= @total %> submissions so far.</p>
+</br>
+<!-- <p>
   <table>
     <tr>
       <th style="width: 50px;">ID</th>
@@ -18,4 +22,42 @@
       </tr>
     <% end %>
   </table>
+</p> -->
+<p>Explore total submissions by state:</p>
+<p>Sort by:
+  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionOneCheck"> Submissions  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionTwoCheck"> State
 </p>
+<br>
+    <div id="optionOne" style="display: none;">
+      <p>
+        <table>
+          <tr>
+            <th style="width: 50px;">State</th>
+            <th style="width: 100px;"># of Submissions</th>
+          </tr>
+          <% @num_sorted.each do |item| %>
+            <tr>
+              <td> <%= p item[0] %> </td>
+              <td> <%= p item[1] %> </td>
+            </tr>
+          <% end %>
+        </table>
+      </p>
+    </div>
+
+    <div id="optionTwo" style="display: none;">
+      <p>
+        <table>
+          <tr>
+            <th style="width: 50px;">State</th>
+            <th style="width: 100px;"># of Submissions</th>
+          </tr>
+          <% @alpha_sorted.each do |item| %>
+            <tr>
+              <td> <%= p item[0] %> </td>
+              <td> <%= p item[1] %> </td>
+            </tr>
+          <% end %>
+        </table>
+      </p>
+    </div>
