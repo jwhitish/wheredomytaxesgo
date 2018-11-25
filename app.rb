@@ -52,18 +52,27 @@ get "/results" do
 end
 
 get "/explore" do
-  if params['key'] == "explore"
+  @submits = Submitteds.all
+  @total = @submits.count
+  @summary = @submits.all.group(:state).count
+  @num_sorted = @summary.sort_by { |key, value| value }.reverse.to_h
+  @alpha_sorted = @summary.sort_by { |key, value| key || "N/A" }.to_h
+
+  erb :explore, :locals => {:submits => @submits, :total => @total, :summary => @summary, :num_sorted => @num_sorted, :alpha_sorted => @alpha_sorted}
+end
+
+get "/admin" do
+  if params[:key] == "explore"
     @submits = Submitteds.all
     @total = @submits.count
     @summary = @submits.all.group(:state).count
     @num_sorted = @summary.sort_by { |key, value| value }.reverse.to_h
     @alpha_sorted = @summary.sort_by { |key, value| key || "N/A" }.to_h
-
   else
     redirect '/'
   end
 
-  erb :explore, :locals => {:submits => @submits, :total => @total, :summary => @summary, :num_sorted => @num_sorted, :alpha_sorted => @alpha_sorted}
+  erb :explore_admin, :locals => {:submits => @submits, :total => @total, :summary => @summary, :num_sorted => @num_sorted, :alpha_sorted => @alpha_sorted}
 end
 
 get "/vote" do

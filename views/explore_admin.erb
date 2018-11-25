@@ -4,7 +4,7 @@
 <script src="application.js"></script>
 <% require 'chartkick' %>
 
-<h1>Explore Recent Submissions</h1>
+<h1>Admin Explore</h1>
 </br>
 </br>
 <p>There have been <%= @total.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %> valid submissions so far.</p>
@@ -15,12 +15,12 @@
 </div>
 </br>
 
-<p>Explore data:</p>
+<p>Explore submissions:</p>
 <p>Group by:
-  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionOneCheck" checked="checked"> # of Submissions  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionTwoCheck"> State
+  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionOneCheck"> # of Submissions  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionTwoCheck"> State <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionThreeCheck"> No Grouping
 </p>
 <br>
-    <div id="optionOne">
+    <div id="optionOne" style="display: none;">
       <p>
         <table>
           <tr>
@@ -53,3 +53,24 @@
         </table>
       </p>
     </div>
+
+<div id="optionThree" style="height:600px; width: 80%; border:1px solid #ccc; overflow:auto; text-align: middle; margin: auto;">
+  <p>
+    <table>
+      <tr>
+        <th style="width: 50px;">ID</th>
+        <th style="width: 100px;">Income</th>
+        <th style="width: 100px;">Location</th>
+        <th style="width: 100px;">Filing Status</th>
+      </tr>
+      <% @submits.each do |item| %>
+        <tr>
+          <td> <%= p item.id %> </td>
+          <td> <%= p item.income %> </td>
+          <td> <%= p item.state %> </td>
+          <td> <%= p item.filing_status %> </td>
+        </tr>
+      <% end %>
+    </table>
+  </p>
+</div>
