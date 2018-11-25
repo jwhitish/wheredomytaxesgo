@@ -1,0 +1,76 @@
+<script src="functions.js"></script>
+<script src="chartkick.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="application.js"></script>
+<% require 'chartkick' %>
+
+<h1>Admin Explore</h1>
+</br>
+</br>
+<p>There have been <%= @total.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %> valid submissions so far.</p>
+
+</br>
+<div id="chart">
+  <%= geo_chart Submitteds.group(:state).count, library: {region: 'US', resolution: 'provinces'}, label: "Submissions" %>
+</div>
+</br>
+
+<p>Explore submissions:</p>
+<p>Group by:
+  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionOneCheck"> # of Submissions  <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionTwoCheck"> State <input type="radio" onclick="javascript:showTable();" name="showtable" id="optionThreeCheck"> No Grouping
+</p>
+<br>
+    <div id="optionOne" style="display: none;">
+      <p>
+        <table>
+          <tr>
+            <th style="width: 50px;">State</th>
+            <th style="width: 100px;"># of Submissions</th>
+          </tr>
+          <% @num_sorted.each do |item| %>
+            <tr>
+              <td> <%= p item[0] %> </td>
+              <td> <%= p item[1] %> </td>
+            </tr>
+          <% end %>
+        </table>
+      </p>
+    </div>
+
+    <div id="optionTwo" style="display: none;">
+      <p>
+        <table>
+          <tr>
+            <th style="width: 50px;">State</th>
+            <th style="width: 100px;"># of Submissions</th>
+          </tr>
+          <% @alpha_sorted.each do |item| %>
+            <tr>
+              <td> <%= p item[0] %> </td>
+              <td> <%= p item[1] %> </td>
+            </tr>
+          <% end %>
+        </table>
+      </p>
+    </div>
+
+<div id="optionThree" style="height:600px; width: 80%; border:1px solid #ccc; overflow:auto; text-align: middle; margin: auto;">
+  <p>
+    <table>
+      <tr>
+        <th style="width: 50px;">ID</th>
+        <th style="width: 100px;">Income</th>
+        <th style="width: 100px;">Location</th>
+        <th style="width: 100px;">Filing Status</th>
+      </tr>
+      <% @submits.each do |item| %>
+        <tr>
+          <td> <%= p item.id %> </td>
+          <td> <%= p item.income %> </td>
+          <td> <%= p item.state %> </td>
+          <td> <%= p item.filing_status %> </td>
+        </tr>
+      <% end %>
+    </table>
+  </p>
+</div>
