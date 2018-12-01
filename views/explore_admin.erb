@@ -63,7 +63,7 @@
         <th style="width: 100px;">Location</th>
         <th style="width: 100px;">Filing Status</th>
       </tr>
-      <% @submits.each do |item| %>
+      <% @submits.order(:id).each do |item| %>
         <tr>
           <td> <%= p item.id %> </td>
           <td> <%= p item.income %> </td>

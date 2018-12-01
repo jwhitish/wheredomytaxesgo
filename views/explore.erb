@@ -15,6 +15,10 @@
     <%= geo_chart Submitteds.group(:state).count, library: {region: 'US', resolution: 'provinces'}, label: "Submissions" %>
   </div>
   </br>
+  <div id="chart">
+    <%= area_chart Submitteds.group(:income).count %>
+  </div>
+  </br>
 
   <p>Explore data:</p>
   <p>Group by:
