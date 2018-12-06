@@ -56,7 +56,7 @@
 
 @media only screen and (max-width: 600px) {
     .grid {
-      grid-template-rows: 20% auto 55px;
+      grid-template-rows: 15% auto 55px;
     }
     .c {
         display: none;
