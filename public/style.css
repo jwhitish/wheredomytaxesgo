@@ -244,7 +244,10 @@ hr {
 /*Mobile*/
 @media only screen and (max-width: 600px) {
     .main {
-        margin-top: 20%;
+        margin-top: 30%;
+    }
+    .main-sb {
+        margin-top: 10%;
     }
     nav {
       overflow: visible;
