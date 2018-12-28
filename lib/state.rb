@@ -107,24 +107,24 @@ end
 def state_breakdown(state_tax, state)
   case state
   when 'CA'
-    @ggr = 0.0592
-    @gen_gov = state_tax * @ggr
-    @hhsr = 0.3194
-    @hhs = state_tax * @hhsr
-    @edur = 0.3638
-    @edu = state_tax * @edur
-    @transr = 0.0738
-    @trans = state_tax * @transr
-    @ps_crmjr = 0.0744
-    @ps_crmj = state_tax * @ps_crmjr
-    @penrr = 0.0550
-    @penr = state_tax * @penrr
-    @biz_ec_devr = 0.0125
-    @biz_ec_dev = state_tax * biz_ec_devr
-    @ljer = 0.0371
-    @lje = state_tax * @ljer
-    @otherr = 0.0043
-    @other = state_tax * @otherr
+    @ggr = "5.92"
+    @gen_gov = state_tax * 0.0592
+    @hhsr = "31.94"
+    @hhs = state_tax * 0.3194
+    @edur = "36.38"
+    @edu = state_tax * 0.3638
+    @transr = "7.38"
+    @trans = state_tax * 0.0738
+    @ps_crmjr = "7.44"
+    @ps_crmj = state_tax * 0.0744
+    @penrr = "5.50"
+    @penr = state_tax * 0.0550
+    @biz_ec_devr = "1.25"
+    @biz_ec_dev = state_tax * 0.0125
+    @ljer = "3.71"
+    @lje = state_tax * 0.0371
+    @otherr = "0.43"
+    @other = state_tax * 0.0043
   when 'TX'
     @ggr = 0.0287
     @gen_gov = state_tax * @ggr
