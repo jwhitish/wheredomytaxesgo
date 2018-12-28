@@ -51,6 +51,24 @@ get "/results" do
   erb :results, :locals => {:total_tax => @total_tax, :socsec => @socsec, :state => @state}
 end
 
+get "/state_results" do
+  @income = session[:income]
+
+  if session[:filing_status] == "single"
+    fed_tax_bracket_single(@income.to_i)
+    total_tax_obligation_single(@income.to_i)
+    breakdown(@total_tax)
+  else #if joint filing
+    fed_tax_bracket_joint(@income.to_i)
+    total_tax_obligation_joint(@income.to_i)
+    breakdown(@total_tax)
+  end
+  state_max_tax(@income.to_i, session[:state])
+  state_breakdown(@state, session[:state])
+
+  erb :results_state, :locals => {:total_tax => @total_tax, :state => @state}
+end
+
 get "/explore" do
   @submits = Submitteds.all
   @total = @submits.count
@@ -128,7 +146,16 @@ post "/" do
   #save to db
   Submitteds.create(:income => params[:income].gsub(/[\s,]/ ,"").to_i.round, :state => params[:state], :filing_status => params[:filing_status])
   #redirect to results page
-  redirect "/results"
+  case session[:state]
+  when 'CA'
+    redirect "/state_results"
+  when 'TX'
+    redirect "/state_results"
+  when 'NY'
+    redirect "/state_results"
+  else
+    redirect "/results"
+  end
 end
 
 post "/results" do

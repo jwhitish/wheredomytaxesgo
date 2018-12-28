@@ -102,3 +102,66 @@ def state_max_tax(gross_income, state)
     @state = gross_income * 0.0
   end
 end
+
+
+def state_breakdown(state_tax, state)
+  case state
+  when 'CA'
+    @ggr = 0.0592
+    @gen_gov = state_tax * @ggr
+    @hhsr = 0.3194
+    @hhs = state_tax * @hhsr
+    @edur = 0.3638
+    @edu = state_tax * @edur
+    @transr = 0.0738
+    @trans = state_tax * @transr
+    @ps_crmjr = 0.0744
+    @ps_crmj = state_tax * @ps_crmjr
+    @penrr = 0.0550
+    @penr = state_tax * @penrr
+    @biz_ec_devr = 0.0125
+    @biz_ec_dev = state_tax * biz_ec_devr
+    @ljer = 0.0371
+    @lje = state_tax * @ljer
+    @otherr = 0.0043
+    @other = state_tax * @otherr
+  when 'TX'
+    @ggr = 0.0287
+    @gen_gov = state_tax * @ggr
+    @hhsr = 0.1377
+    @hhs = state_tax * @hhsr
+    @edur = 0.3710
+    @edu = state_tax * @edur
+    @transr = 0.2288
+    @trans = state_tax * @transr
+    @ps_crmjr = 0.0605
+    @ps_crmj = state_tax * @ps_crmjr
+    @penrr = 0.0209
+    @penr = state_tax * @penrr
+    @biz_ec_devr = 0.1469
+    @biz_ec_dev = state_tax * @biz_ec_devr
+    @ljer = 0.0046
+    @lje = state_tax * @ljer
+    @otherr =0.0003
+    @other = state_tax * @otherr
+  when 'NY'
+    @ggr = 0.0124
+    @gen_gov = state_tax * @ggr
+    @hhsr = 0.4910
+    @hhs = state_tax * @hhsr
+    @edur = 0.2765
+    @edu = state_tax * @edur
+    @transr = 0.0616
+    @trans = state_tax * @transr
+    @ps_crmjr = 0.0330
+    @ps_crmj = state_tax * @ps_crmjr
+    @penrr = 0.0096
+    @penr = state_tax * @penrr
+    @biz_ec_devr = 0.0163
+    @biz_ec_dev = state_tax * @biz_ec_devr
+    @ljer = 0.0219
+    @lje = state_tax * @ljer
+    @otherr = 0.0772
+    @other = state_tax * @otherr
+  end
+end

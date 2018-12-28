@@ -1,0 +1,319 @@
+<h1>Where Do My Taxes Go?</h1>
+</br>
+<div id="results">
+  <p>Based on the information you entered, your annual tax obligation before deductions is around: $<%=  '%.2f' % @total_tax %></br>And the state of <%= session[:state] %> may collect up to an additional: $<%= '%.2f' % @state.to_i %></p>
+  </br>
+  <p>According to our calculations, this would break down in the <a href="https://www.whitehouse.gov/wp-content/uploads/2018/02/budget-fy2019.pdf" target="_blank">proposed 2019 federal budget</a> as follows:</p>
+</br>
+  <table>
+    <tr>
+      <th style="width: 100px;">Federal</th>
+    </tr>
+    <tr>
+      <th style="width: 100px;">Category</th>
+      <th style="width: 200px;">Budget Item</th>
+      <th style="width: 50px;">%</th>
+      <th style="width: 200px;">Your Contribution</th>
+    </tr>
+    <tr>
+      <td>Mandatory Programs</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Social_Security_(United_States)" target="_bank">Social Security</a></td>
+      <td>24.28</td>
+      <td>$<%= '%.2f' % @socsec %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Medicare_(United_States)" target="_blank">Medicare</a></td>
+      <td>14.51</td>
+      <td>$<%= '%.2f' % @medicare %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Medicaid" target="_blank">Medicaid</a></td>
+      <td>9.50</td>
+      <td>$<%= '%.2f' % @medicaid %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Health_insurance_marketplace#Subsidies" target="_blank">Health Exchange Subsidies</a></td>
+      <td>1.04</td>
+      <td>$<%= '%.2f' % @h_ex_sub %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Mandatory_spending" target="_blank">Other Mandatory Programs</a></td>
+      <td>13.16</td>
+      <td>$<%= '%.2f' % @mand_prog %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://www.cbo.gov/publication/52463" target="_blank">Infrastructure Initiative</a></td>
+      <td>1.04</td>
+      <td>$<%= '%.2f' % @inf_init %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://definedterm.com/a/definition/4513" target="_blank">Net Interest Payment</a></td>
+      <td>8.42</td>
+      <td>$<%= '%.2f' % @net_int %></td>
+    </tr>
+    <tr>
+      <td>Discretionary Programs</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Agriculture" target="_blank">Dept of Agriculture</a></td>
+      <td>0.44</td>
+      <td>$<%= '%.2f' % @d_agr %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Commerce" target="_blank">Dept of Commerce</a></td>
+      <td>0.22</td>
+      <td>$<%= '%.2f' % @d_com %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Defense" target="_blank">Dept of Defense</a></td>
+      <td>13.86</td>
+      <td>$<%= '%.2f' % @d_def %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Education" target="_blank">Dept of Education</a></td>
+      <td>1.39</td>
+      <td>$<%= '%.2f' % @d_edu %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Energy" target="_blank">Dept of Energy</a></td>
+      <td>0.67</td>
+      <td>$<%= '%.2f' % @d_ene %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Health_and_Human_Services" target="_blank">Dept of Health & Human Services</a></td>
+      <td>1.61</td>
+      <td>$<%= '%.2f' % @d_hhs %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Homeland_Security" target="_blank">Dept of Homeland Security</a></td>
+      <td>1.06</td>
+      <td>$<%= '%.2f' % @d_hs %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Housing_and_Urban_Development" target="_blank">Dept of Housing & Urban Development</a></td>
+      <td>0.91</td>
+      <td>$<%= '%.2f' % @d_hu %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_the_Interior" target="_blank">Dept of the Interior</a></td>
+      <td>0.26</td>
+      <td>$<%= '%.2f' % @d_int %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Justice" target="_blank">Dept of Justice</a></td>
+      <td>0.65</td>
+      <td>$<%= '%.2f' % @d_jus %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Labor" target="_blank">Dept of Labor</a></td>
+      <td>0.21</td>
+      <td>$<%= '%.2f' % @d_lab %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_State" target="_blank">State Dept & International Programs</a></td>
+      <td>0.65</td>
+      <td>$<%= '%.2f' % @st_dep %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Transportation" target="_blank">Dept of Transportation</a></td>
+      <td>0.36</td>
+      <td>$<%= '%.2f' % @d_tra %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_the_Treasury" target="_blank">Dept of the Treasury</a></td>
+      <td>0.28</td>
+      <td>$<%= '%.2f' % @d_tre %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Department_of_Veterans_Affairs" target="_blank">Dept of Veteran's Affairs</a></td>
+      <td>1.92</td>
+      <td>$<%= '%.2f' % @d_va %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Army_Corps_of_Engineers" target="_blank">Corps of Engineers</a></td>
+      <td>0.11</td>
+      <td>$<%= '%.2f' % @corp_eng %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/United_States_Environmental_Protection_Agency" target="_blank">Environmental Protection Agency</a></td>
+      <td>0.12</td>
+      <td>$<%= '%.2f' % @epa %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/General_Services_Administration" target="_blank">General Services Administration</a></td>
+      <td>0.01</td>
+      <td>$<%= '%.2f' % @gsa %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/NASA" target="_blank">National Aeronautics & Space Administration</a></td>
+      <td>0.45</td>
+      <td>$<%= '%.2f' % @nasa %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/National_Science_Foundation" target="_blank">National Science Foundation</a></td>
+      <td>0.12</td>
+      <td>$<%= '%.2f' % @nsf %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Small_Business_Administration" target="_blank">Small Business Administration</a></td>
+      <td>0.01</td>
+      <td>$<%= '%.2f' % @sba %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Social_Security_Administration" target="_blank">Social Security Administration</a></td>
+      <td>0.20</td>
+      <td>$<%= '%.2f' % @ssa %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/List_of_federal_agencies_in_the_United_States" target="_blank">Other Agencies</a></td>
+      <td>0.41</td>
+      <td>$<%= '%.2f' % @other_agencies %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://en.wikipedia.org/wiki/Overseas_Contingency_Operation" target="_blank">Overseas Contingency Operations</a></td>
+      <td>2.34</td>
+      <td>$<%= '%.2f' % @overseas %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://www.cbo.gov/topics/disaster-preparation-and-relief" target="_blank">Emergency Funding</a></td>
+      <td>0</td>
+      <td>$<%= '%.2f' % @em_fund %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://www.cbo.gov/publication/49460#section3" target="_blank">Program Integrity</a></td>
+      <td>0.05</td>
+      <td>$<%= '%.2f' % @prog_integ %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://www.cbo.gov/topics/disaster-preparation-and-relief" target="_blank">Disaster Relief</a></td>
+      <td>0.15</td>
+      <td>$<%= '%.2f' % @dis_relief %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="item"><a href="https://www.cbo.gov/topics/disaster-preparation-and-relief" target="_blank">Wildfire Supression</a></td>
+      <td>0.03</td>
+      <td>$<%= '%.2f' % @wildfire %></td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr style="color: white; border-color: white;">
+      <td style="border-color: white;"></br></td>
+    </tr>
+    <tr>
+      <th style="width: 100px;">State of <%= session[:state] %></th>
+    </tr>
+    <tr>
+      <th style="width: 100px;"></th>
+      <th style="width: 200px;">Budget Item</th>
+      <th style="width: 50px;">%</th>
+      <th style="width: 200px;">Your Contribution</th>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">General Government</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @gen_gov %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Health & Human Services</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @hhs %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Education</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @edu %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Transportation</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @trans %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Public Safety & Criminal Justice</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @ps_crmj %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Parks, Environment & Natural Resources</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @penr %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Business & Economic Development</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @biz_ec_dev %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Legislative, Judicial, and Executive</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @lje %></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td class="item">Other</td>
+      <td>0.00</td>
+      <td>$<%= '%.2f' % @other %></td>
+    </tr>
+  </table>
+  </br>
+  <p>Unhappy about how much you're giving to a particular agency? </br><a href="/vote">Register to vote</a> and let your voice be heard!</p>
+  </br>
+  <form action="/results" method="post">
+    <input class='button' type='submit' value='Start Over' name='button'/>
+  </form>
+</br>
+</div>
