@@ -163,6 +163,25 @@ def state_breakdown(state_tax, state)
     @lje = state_tax * 0.0576
     @otherr = "2.48"
     @other = state_tax * 0.0248
+  when 'PA'
+    @ggr = "5.04"
+    @gen_gov = state_tax * 0.0504
+    @hhsr = "45.26"
+    @hhs = state_tax * 0.4526
+    @edur = "43.56"
+    @edu = state_tax * 0.4356
+    @transr = "0.00"
+    @trans = state_tax * 0.0000
+    @ps_crmjr = "0.91"
+    @ps_crmj = state_tax * 0.0091
+    @penrr = "1.22"
+    @penr = state_tax * 0.0122
+    @biz_ec_devr = "0.41"
+    @biz_ec_dev = state_tax * 0.0041
+    @ljer = "2.99"
+    @lje = state_tax * 0.0299
+    @otherr = "0.56"
+    @other = state_tax * 0.0056
   when 'TX'
     @ggr = "2.87"
     @gen_gov = state_tax * 0.0287
@@ -201,5 +220,7 @@ def state_breakdown(state_tax, state)
     @lje = state_tax * 0.0219
     @otherr = "7.72"
     @other = state_tax * 0.0772
+  when 'WA'
+    #rates
   end
 end
