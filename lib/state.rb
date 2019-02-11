@@ -221,6 +221,23 @@ def state_breakdown(state_tax, state)
     @otherr = "7.72"
     @other = state_tax * 0.0772
   when 'WA'
-    #rates
+    @ggr = "4.31"
+    @gen_gov = state_tax * 0.0431
+    @hhsr = "26.17"
+    @hhs = state_tax * 0.2617
+    @edur = "51.26"
+    @edu = state_tax * 0.5126
+    @transr = "5.79"
+    @trans = state_tax * 0.0579
+    @ps_crmjr = "3.12"
+    @ps_crmj = state_tax * 0.0312
+    @penrr = "1.72"
+    @penr = state_tax * 0.0172
+    @biz_ec_devr = "0.0"
+    @biz_ec_dev = state_tax * 0.0
+    @ljer = "0.0"
+    @lje = state_tax * 0.0
+    @otherr = "7.59"
+    @other = state_tax * 0.0759
   end
 end
