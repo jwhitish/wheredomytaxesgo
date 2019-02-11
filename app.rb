@@ -149,9 +149,17 @@ post "/" do
   case session[:state]
   when 'CA'
     redirect "/state_results"
+  when 'FL'
+    redirect "/state_results"
+  when 'IL'
+    redirect "/state_results"
+  when 'PA'
+    redirect "/state_results"
   when 'TX'
     redirect "/state_results"
   when 'NY'
+    redirect "/state_results"
+  when 'WA'
     redirect "/state_results"
   else
     redirect "/results"
