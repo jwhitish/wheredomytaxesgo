@@ -144,6 +144,25 @@ def state_breakdown(state_tax, state)
     @lje = state_tax * 0.06
     @otherr = "0.0"
     @other = state_tax * 0.00
+  when 'IL'
+    @ggr = "11.48"
+    @gen_gov = state_tax * 0.1148
+    @hhsr = "34.47"
+    @hhs = state_tax * 0.3447
+    @edur = "21.06"
+    @edu = state_tax * 0.2106
+    @transr = "13.59"
+    @trans = state_tax * 0.1359
+    @ps_crmjr = "3.06"
+    @ps_crmj = state_tax * 0.0306
+    @penrr = "3.88"
+    @penr = state_tax * 0.0388
+    @biz_ec_devr = "4.17"
+    @biz_ec_dev = state_tax * 0.0417
+    @ljer = "5.76"
+    @lje = state_tax * 0.0576
+    @otherr = "2.48"
+    @other = state_tax * 0.0248
   when 'TX'
     @ggr = "2.87"
     @gen_gov = state_tax * 0.0287
