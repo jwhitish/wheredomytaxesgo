@@ -126,11 +126,6 @@ get "/error" do
 end
 
 get "/press" do
-  if params[:key] == "press"
-
-  else
-    redirect '/'
-  end
   erb :press
 end
 
