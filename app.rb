@@ -129,6 +129,10 @@ get "/press" do
   erb :press
 end
 
+get "/blog" do
+  erb :blog, :layout => :layout_sidebar
+end
+
 not_found do
   status 404
   erb :error
